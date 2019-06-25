@@ -32,7 +32,7 @@ public class Mainfile {
 
                  Pages p=new Pages(driver);
 
-                // p.LoginJira("sellappillai.babu@emids.com","P@ssw0rd123");
+                 p.LoginJira("","");
 
                  File file=new File("StorydetailsJiraAutoTask.xls");
         		 Workbook Wb=Workbook.getWorkbook(file);
