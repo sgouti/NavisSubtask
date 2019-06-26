@@ -80,6 +80,16 @@ public class Login {
 		WebElement s1=driver.findElement(By.xpath("//h1[contains(text(),'Attachments')]"));
 		((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();",s1);
 	}
+	
+	public void scrolinnrPge1() throws InterruptedException
+	{
+		EventFiringWebDriver scrlPge=new EventFiringWebDriver(driver);
+		WebElement s=driver.findElement(By.xpath("//div[@class='asset-summary asset-summary-modal Defect']"));
+		((JavascriptExecutor)driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		Thread.sleep(5000);
+		//WebElement s1=driver.findElement(By.xpath("//h1[contains(text(),'Attachments')]"));
+		//((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();",s1);
+	}
 	public void scrnsht() throws IOException
 	{
 		SimpleDateFormat dateFormat = new SimpleDateFormat("ddMMMyyyy-hh_mm a");

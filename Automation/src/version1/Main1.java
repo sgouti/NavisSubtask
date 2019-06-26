@@ -34,7 +34,7 @@ public class Main1 {
 		L.Login(prop.getProperty("username"), prop.getProperty("Password"));
 	//	L.filtrBord("Siddharth");
 		L.SearchfrDfct(prop.getProperty("DefectId"));
-	//	L.scrolinnrPge();
+		L.scrolinnrPge1();
 	//	L.scrnsht();
 		L.sclrInnrPge();
 		Thread.sleep(3000);
