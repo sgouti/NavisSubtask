@@ -35,14 +35,14 @@ public class Mainfile {
 		Workbook Wb = Workbook.getWorkbook(file);
 		Sheet sht = Wb.getSheet(0);
 		int totalTc = sht.getRows();
-		String name = null;
+		String StoryId = null;
 		System.out.println(totalTc);
 
 		for (int i = 1; i < totalTc; i++) {
 			try {
-				name = sht.getCell(0, i).getContents();
-				System.out.println(name);
-				p.NavigateToStory(name);
+				StoryId = sht.getCell(0, i).getContents();
+				System.out.println(StoryId);
+				p.NavigateToStory(StoryId);
 				Thread.sleep(1000);
 				int stropoint = p.Storypoint;
 				String DB, API, FI, Int, CRv, CRf, MB, UT, BF, QTR, QBV, QTD, QTE, QA;
@@ -128,7 +128,7 @@ public class Mainfile {
 				 */
 
 			} catch (Exception e) {
-				System.out.println(e + "= " + name);
+				System.out.println(e + "= " + StoryId);
 			}
 		}
 

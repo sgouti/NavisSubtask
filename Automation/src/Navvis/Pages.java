@@ -213,7 +213,7 @@ public class Pages {
 		Thread.sleep(2000);
 
 	}
-
+	
 	public void Logout() throws InterruptedException
 
 	{
