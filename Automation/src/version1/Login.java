@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -14,6 +15,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -37,12 +39,12 @@ public class Login {
 		this.driver=driver;
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-		
+	
 	}
 	public void Login(String User,String pass) throws InterruptedException, IOException
 	{
 		 
-		 FileInputStream ip= new FileInputStream("C:\\Users\\siddharth\\eclipse-workspace\\Automation\\src\\version1\\config.properties");
+		 FileInputStream ip= new FileInputStream("C:\\Users\\siddh\\git\\NavisSubtask\\Automation\\src\\version1\\config.properties");
 		 prop.load(ip);
 		 
 		driver.get("https://www15.v1host.com/Greenway/Account.mvc/LogIn");
@@ -67,7 +69,7 @@ public class Login {
 		driver.findElement(By.xpath(prop.getProperty("xpthDfctSrchfld"))).sendKeys(DfctId);
 		driver.findElement(By.xpath(prop.getProperty("xpthSrchsggesn"))).click();
 		WebDriverWait wait=new WebDriverWait(driver,10);
-	//	wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(prop.getProperty("xpthFrPrjcttitle"))));
+		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(prop.getProperty("xpthFrPrjcttitle"))));
 		Thread.sleep(3000);
 		
 	}
@@ -87,6 +89,7 @@ public class Login {
 		WebElement s=driver.findElement(By.xpath("//div[@class='asset-summary asset-summary-modal Defect']"));
 		((JavascriptExecutor)driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
 		Thread.sleep(5000);
+		
 		//WebElement s1=driver.findElement(By.xpath("//h1[contains(text(),'Attachments')]"));
 		//((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();",s1);
 	}
@@ -166,6 +169,7 @@ public class Login {
 		String subWindowHandler = null;
 
 		Set<String> handles = driver.getWindowHandles(); // get all window handles
+		int a=handles.size();
 		for(String s:handles)
 		{
 			System.out.println(s);

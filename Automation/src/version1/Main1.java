@@ -26,7 +26,7 @@ public class Main1 {
 		// TODO Auto-generated method stub
 		WebDriver driver = new ChromeDriver();
 		 Properties prop=new Properties();
-		 FileInputStream ip= new FileInputStream("C:\\Users\\siddharth\\eclipse-workspace\\Automation\\src\\version1\\config.properties");
+		 FileInputStream ip= new FileInputStream("C:\\Users\\siddh\\git\\NavisSubtask\\Automation\\src\\version1\\config.properties");
 		prop.load(ip);
 		
 		Login L=new Login();
